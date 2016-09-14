@@ -1,14 +1,5 @@
 {
   "parser": "babel-eslint",
-  "extends": [
-    "plugin:react/recommended"
-  ],
-  "settings": {
-    "react": {
-      "pragma": "React",
-      "version": "15.0"
-    }
-  },
   "globals": {
     "__VERSION__": true
   },
@@ -284,8 +275,6 @@
     "prefer-template": 1,
     "require-yield": 1,
     "template-curly-spacing": [1, "never"],
-    "yield-star-spacing": [1, "before"],
-
-    "react/no-render-return-value": [0]
+    "yield-star-spacing": [1, "before"]
   }
 }
