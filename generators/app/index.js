@@ -29,15 +29,15 @@ module.exports = yeoman.Base.extend({
         {opt: this.props}
       );
       this.fs.copy(
-        this.templatePath('.eslintrc'),
+        this.templatePath('_eslintrc'),
         this.destinationPath('.eslintrc')
       );
       this.fs.copy(
-        this.templatePath('.stylelintrc'),
+        this.templatePath('_stylelintrc'),
         this.destinationPath('.stylelintrc')
       );
       this.fs.copy(
-        this.templatePath('.gitignore'),
+        this.templatePath('_gitignore'),
         this.destinationPath('.gitignore')
       );
     },
@@ -85,7 +85,7 @@ module.exports = yeoman.Base.extend({
       );
 
       this.fs.copy(
-        this.templatePath('app/assets/.gitkeep'),
+        this.templatePath('app/assets/_gitkeep'),
         this.destinationPath('app/styles/.gitkeep')
       );
     }
