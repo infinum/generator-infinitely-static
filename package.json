@@ -1,6 +1,6 @@
 {
   "name": "generator-webpack-infinum",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "An Infinum Webpack generator",
   "homepage": "https://infinum.co",
   "author": {
@@ -42,7 +42,7 @@
       "mocha": true
     }
   },
-  "repository": "andreicek/generator-react-webpack-infinum",
+  "repository": "andreicek/generator-webpack-infinum",
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp"
