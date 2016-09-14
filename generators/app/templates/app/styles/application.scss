@@ -1,0 +1,4 @@
+<% if (!opt.modules) { %>
+@import 'color';
+@import 'media';
+<% } %>

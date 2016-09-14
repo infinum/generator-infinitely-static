@@ -1,0 +1,50 @@
+{
+  "name": "<%= opt.name %>",
+  "version": "1.0.0",
+  "description": "<%= opt.description %>",
+  "main": "app/scripts/application.js",
+  "scripts": {
+    "__eslint": "eslint app/",
+    "__stylelint": "stylelint \"app/**/*.scss\" --syntax scss",
+    "precommit": "npm run __eslint && npm run __stylelint",
+    "build": "webpack --progress --config config/webpack.config.js",
+    <% if (opt.server) { %>"start": "NODE_ENV=development node ./config/webpack.server.js"<% } %>
+  },
+  "author": "Infinum <javascript.team@infinum.co>",
+  "license": "UNLICENSED",
+  "private": "true",
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "stylelint": "^7.2.0",
+    "eslint": "^3.4.0",
+    "babel-eslint": "^6.1.2",
+    <% if (opt.babel) { %>
+    "babel-core": "^6.7.6",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.6.0",
+    <% } %>
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "html-webpack-plugin": "^2.17.0",
+    "node-sass": "^3.4.2",
+    "postcss-loader": "^0.8.2",
+    "resolve-url-loader": "^1.4.3",
+    "sass-loader": "^3.2.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.12.15",
+    <% if (opt.husky) { %>
+    "husky": "^0.11.7",
+    <% } %>
+    <% if (opt.server) { %>
+    "webpack-dev-server": "^1.14.1"
+    <% } %>
+  },
+  "engines": {
+    "npm": "3.x.x",
+    "node": "5.x.x"
+  },
+  "dependencies": {
+    "jquery": "^2.2.3"
+  }
+}
