@@ -7,7 +7,7 @@ First, install [Yeoman](http://yeoman.io) and generator-webpack-infinum using [n
 
 ```bash
 npm install -g yo
-npm install -g andreicek/generator-webpack-infinum
+npm install -g generator-webpack-infinum
 ```
 
 Then generate your new project:
