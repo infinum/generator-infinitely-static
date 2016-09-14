@@ -92,11 +92,11 @@ module.exports = yeoman.Base.extend({
   },
 
   install: function () {
+    this.spawnCommandSync('git', ['init']);
     this.npmInstall();
   },
 
   end: function () {
-    this.spawnCommandSync('git', ['init']);
     this.spawnCommandSync('git', ['add', '.']);
     this.spawnCommandSync('git', ['commit', '-m', '🍺 Repo init']);
   }
