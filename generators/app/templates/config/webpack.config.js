@@ -50,8 +50,8 @@ const config = {
 
   resolve: {
     root: [
-      path.join(__dirname, '..', 'app/script'),
-      path.join(__dirname, '..', 'app/style'),
+      path.join(__dirname, '..', 'app/scripts'),
+      path.join(__dirname, '..', 'app/styles'),
       path.join(__dirname, '..', 'app/assets')
     ],
     modulesDirectories: [
