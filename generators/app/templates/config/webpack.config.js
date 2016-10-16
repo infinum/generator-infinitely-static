@@ -38,7 +38,7 @@ const config = {
 
   entry: {
     app: [
-      path.join(__dirname, '..', 'app/script/application.js')
+      path.join(__dirname, '..', 'app/scripts/application.js')
     ]
   },
 
