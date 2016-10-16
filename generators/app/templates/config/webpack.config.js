@@ -34,7 +34,7 @@ const config = {
     })
   ],
 
-  target: '<%= opt.web %>', // https://webpack.github.io/docs/configuration.html#target
+  target: '<%= opt.target %>', // https://webpack.github.io/docs/configuration.html#target
 
   entry: {
     app: [
