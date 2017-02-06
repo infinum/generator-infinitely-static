@@ -34,6 +34,6 @@ module.exports = {
   },
 
   resolveTemplate(fileName) {
-    return `app/pages/${fileName}.hbs`;
+    return `app/templates/pages/${fileName}.hbs`;
   }
 };

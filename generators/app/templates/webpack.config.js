@@ -43,15 +43,15 @@ const config = {
       loader: 'handlebars-loader',
       query: {
         inlineRequires: 'images\/|videos',
-        helperDirs: path.resolve(rootPath, 'app/templates/helpers'),
-        partialDirs: path.resolve(rootPath, 'app/templates')
+        helperDirs: path.resolve(__dirname, 'app/templates/helpers'),
+        partialDirs: path.resolve(__dirname, 'app/templates')
       }
     }, {
       test: /\.(jpg|png|svg|eot|ttf|woff)$/,
       loader: 'file-loader'
     },
-    generateStyleLoader()
-  ]},
+      generateStyleLoader()
+    ]},
 
   plugins: [
     new webpack.DefinePlugin({
