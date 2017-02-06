@@ -1,9 +1,7 @@
-'use strict';
-
-var yeoman = require('yeoman-generator');
-var chalk = require('chalk');
-var yosay = require('yosay');
-var prompts = require('./prompts');
+const yeoman = require('yeoman-generator');
+const chalk = require('chalk');
+const yosay = require('yosay');
+const prompts = require('./prompts');
 
 module.exports = yeoman.Base.extend({
   prompting: function () {
@@ -17,7 +15,7 @@ module.exports = yeoman.Base.extend({
   },
 
   writing: {
-    config: function () {
+    config() {
       this.fs.copyTpl(
         this.templatePath('package.json'),
         this.destinationPath('package.json'),
@@ -29,61 +27,57 @@ module.exports = yeoman.Base.extend({
         {opt: this.props}
       );
       this.fs.copy(
-        this.templatePath('_eslintrc'),
-        this.destinationPath('.eslintrc')
+        this.templatePath('webpack.helpers.js'),
+        this.destinationPath('webpack.helpers.js')
+      );
+      this.fs.copy(
+        this.templatePath('webpack.config.js'),
+        this.destinationPath('webpack.config.js')
+      );
+      this.fs.copy(
+        this.templatePath('postcss.config.js'),
+        this.destinationPath('postcss.config.js')
+      );
+      this.fs.copy(
+        this.templatePath('postcss.config.js'),
+        this.destinationPath('postcss.config.js')
+      );
+      this.fs.copy(
+        this.templatePath('browserslist'),
+        this.destinationPath('browserslist')
       );
       this.fs.copy(
         this.templatePath('_stylelintrc'),
         this.destinationPath('.stylelintrc')
       );
       this.fs.copy(
+        this.templatePath('_eslintrc'),
+        this.destinationPath('.eslintrc')
+      );
+      this.fs.copy(
         this.templatePath('_gitignore'),
         this.destinationPath('.gitignore')
       );
+      this.fs.copy(
+        this.templatePath('_babelrc'),
+        this.destinationPath('.babelrc')
+      );
     },
-    app: function () {
-      this.fs.copyTpl(
-        this.templatePath('config/webpack.config.js'),
-        this.destinationPath('config/webpack.config.js'),
-        {opt: this.props}
-      );
 
-      if (this.props.server) {
-        this.fs.copyTpl(
-          this.templatePath('config/webpack.server.js'),
-          this.destinationPath('config/webpack.server.js'),
-          {opt: this.props}
-        );
-      }
-
-      this.fs.copyTpl(
-        this.templatePath('app/scripts/application.js'),
-        this.destinationPath('app/scripts/application.js'),
-        {opt: this.props}
-      );
-
-      this.fs.copyTpl(
-        this.templatePath('app/styles/application.scss'),
-        this.destinationPath('app/styles/application.scss'),
-        {opt: this.props}
-      );
-
+    app() {
       this.fs.copy(
-        this.templatePath('app/styles/colors.scss'),
-        this.destinationPath('app/styles/colors.scss')
+        this.templatePath('app/scripts/index.js'),
+        this.destinationPath('app/scripts/index.js')
       );
-
       this.fs.copy(
-        this.templatePath('app/styles/media.scss'),
-        this.destinationPath('app/styles/media.scss')
+        this.templatePath('app/styles/index.scss'),
+        this.destinationPath('app/styles/index.scss')
       );
-
       this.fs.copyTpl(
         this.templatePath('app/index.html'),
         this.destinationPath('app/index.html'),
         {opt: this.props}
       );
-
       this.fs.copy(
         this.templatePath('app/assets/_gitkeep'),
         this.destinationPath('app/styles/.gitkeep')
@@ -91,13 +85,7 @@ module.exports = yeoman.Base.extend({
     }
   },
 
-  install: function () {
-    this.spawnCommandSync('git', ['init']);
+  install() {
     this.npmInstall();
-  },
-
-  end: function () {
-    this.spawnCommandSync('git', ['add', '.']);
-    this.spawnCommandSync('git', ['commit', '-m', '🍺 Repo init']);
   }
 });

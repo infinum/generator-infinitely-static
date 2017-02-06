@@ -1,0 +1,59 @@
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+
+const {generateStyleLoader} = require('./webpack.helpers');
+const DEV = process.env.NODE_ENV !== 'production';
+
+const config = {
+  context: path.join(__dirname),
+
+  entry: {
+    app: ['./app/scripts/index.js']
+  },
+
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: DEV ? '[name].js' : '[name]-[hash].min.js'
+  },
+
+  resolve: {
+    modules: [
+      path.resolve(__dirname, 'app'),
+      path.resolve(__dirname, 'app/scripts'),
+      path.resolve(__dirname, 'app/styles'),
+      path.resolve(__dirname, 'app/assets'),
+      'node_modules'
+    ]
+  },
+
+  module: {
+    rules: [{
+      test: /\.(js|jsx)$/,
+      loader: 'babel-loader'
+    }, {
+      test: /\.(jpg|png|svg|eot|ttf|woff)$/,
+      loader: 'file-loader'
+    },
+    generateStyleLoader()
+  ]},
+
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './app/index.html'
+    })
+  ]
+};
+
+if (!DEV) {
+  config.plugins = [
+    ...config.plugins,
+    new CleanWebpackPlugin(['dist']),
+    new webpack.optimize.UglifyJsPlugin(),
+    new ExtractTextPlugin('[name]-[hash].min.css')
+  ];
+}
+
+module.exports = config;

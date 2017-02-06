@@ -5,15 +5,14 @@
 
 ## First run
 
-Start by issuing `npm install` or `npm i`.
+Start by running `npm install` or `npm i`.
 
 ## Development
 
-Be sure to have Node version `> 5.x.x`.
+Be sure to have Node LTS version `> 6.9.x`.
 
-You can run:
+You can run the server with `npm start`.
 
-<% if (opt.server) { %>
-* `npm start` and that will start a development server
-<% } %>
-* `npm run build` and that will produce a build in `build/` folder
+## Production
+
+For production build run `npm run build`. Your build will be in `dist/`.
