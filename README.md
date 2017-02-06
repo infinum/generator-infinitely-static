@@ -26,6 +26,8 @@ mkdir my-project
 yo infinitely-static
 ```
 
+**Note**: After the project is initalized run `npm install husky --save-dev`.
+
 ## Development
 
 When Yeoman finishes you have a working project.
@@ -52,3 +54,9 @@ Adding routes is also simple. In the root of the project you will find `routes.j
   "contact": "contact/us" // will take file app/templates/pages/contact.hbs
 }
 ```
+
+## License
+
+The MIT License
+
+![](https://assets.infinum.co/assets/brand-logo-9e079bfa1875e17c8c1f71d1fee49cf0.svg) © 2016 Infinum Inc.

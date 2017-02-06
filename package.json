@@ -1,15 +1,29 @@
 {
   "name": "generator-infinitely-static",
   "version": "1.0.0",
-  "description": "An Infinum Webpack generator",
-  "license": "MIT",
+  "description": "Static page generator with routes support thats infinitely awesome",
   "files": [
     "generators"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/infinum/generator-infinitely-static.git"
+  },
   "scripts": {
     "prepublish": "gulp"
   },
   "main": "generators/index.js",
+  "author": "Infinum <javascript.team@infinum.co>",
+  "contributors": [
+    {
+      "name": "Andrei Zvonimir Crnkovic",
+      "email": "andrei@infinum.co"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/infinum/generator-infinitely-static/issues"
+  },
   "keywords": [
     "infinum",
     "webpack",
