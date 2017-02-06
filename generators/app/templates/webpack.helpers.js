@@ -24,5 +24,16 @@ module.exports = {
           use: base.use
         })
     };
+  },
+  resolveFileName(filePath) {
+    const fileName = filePath.slice(0, -1);
+
+    return fileName.length
+      ? `${fileName}/index.html`
+      : 'index.html';
+  },
+
+  resolveTemplate(fileName) {
+    return `app/pages/${fileName}.hbs`;
   }
 };

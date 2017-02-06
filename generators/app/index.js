@@ -35,6 +35,10 @@ module.exports = yeoman.Base.extend({
         this.destinationPath('webpack.config.js')
       );
       this.fs.copy(
+        this.templatePath('routes.json'),
+        this.destinationPath('routes.json')
+      );
+      this.fs.copy(
         this.templatePath('postcss.config.js'),
         this.destinationPath('postcss.config.js')
       );
@@ -65,6 +69,15 @@ module.exports = yeoman.Base.extend({
     },
 
     app() {
+      this.fs.copyTpl(
+        this.templatePath('app/templates/pages/index.html'),
+        this.destinationPath('app/templates/pages/index.html'),
+        {opt: this.props}
+      );
+      this.fs.copy(
+        this.templatePath('app/templates/helpers/_gitkeep'),
+        this.destinationPath('app/templates/helpers/.gitkeep')
+      );
       this.fs.copy(
         this.templatePath('app/scripts/index.js'),
         this.destinationPath('app/scripts/index.js')
@@ -72,11 +85,6 @@ module.exports = yeoman.Base.extend({
       this.fs.copy(
         this.templatePath('app/styles/index.scss'),
         this.destinationPath('app/styles/index.scss')
-      );
-      this.fs.copyTpl(
-        this.templatePath('app/index.html'),
-        this.destinationPath('app/index.html'),
-        {opt: this.props}
       );
       this.fs.copy(
         this.templatePath('app/assets/_gitkeep'),
