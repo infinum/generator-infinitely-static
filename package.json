@@ -1,6 +1,6 @@
 {
-  "name": "generator-webpack-infinum",
-  "version": "0.1.3",
+  "name": "generator-infinitely-static",
+  "version": "1.0.0",
   "description": "An Infinum Webpack generator",
   "license": "MIT",
   "files": [
