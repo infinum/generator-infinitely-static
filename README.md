@@ -23,6 +23,7 @@ Running this is really simple. You'll need this generator and `yo` installed.
 ```bash
 npm install -g yo generator-infinitely-static
 mkdir my-project
+cd my-project
 yo infinitely-static
 ```
 
