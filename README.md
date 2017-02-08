@@ -13,8 +13,8 @@ the best of Webpack and related tools.
 * JavaScript minification and dead code removal
 * SASS compilation, prefixing, and minification
 * A library for managing media breakpoints ([media-blender](https://github.com/infinum/media-blender))
-* Handlebars as a templating language (with helpers)
-* Support for routes
+* Handlebars as a templating language (with helpers, layouts, and partials)
+* Support for routes (flat and nested build structure)
 
 ## Getting started
 
@@ -27,7 +27,7 @@ cd my-project
 yo infinitely-static
 ```
 
-**Note**: After the project is initalized run `npm install husky --save-dev`.
+**Note**: After the project is initialized run `npm install husky --save-dev`.
 
 ## Development
 
@@ -52,8 +52,14 @@ Adding routes is also simple. In the root of the project you will find `routes.j
 ```javascript
 {
   "index": "/", // points to the template file in app/templates/pages/index.hbs
-  "contact": "contact/us" // will take file app/templates/pages/contact.hbs
+  "contact": "contact/us/" // will take file app/templates/pages/contact.hbs
 }
+```
+
+Afterwards, in your templates you can use the included `{{linkTo}}` helper like this:
+
+```html
+<a href="{{linkTo 'index'}}">Home</a>
 ```
 
 ## License

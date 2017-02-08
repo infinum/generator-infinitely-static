@@ -26,10 +26,12 @@ const config = {
 
   resolve: {
     modules: [
+      path.resolve(__dirname),
       path.resolve(__dirname, 'app'),
       path.resolve(__dirname, 'app/scripts'),
       path.resolve(__dirname, 'app/styles'),
       path.resolve(__dirname, 'app/assets'),
+      path.resolve(__dirname, 'app/templates'),
       'node_modules'
     ]
   },
@@ -46,6 +48,9 @@ const config = {
         helperDirs: path.resolve(__dirname, 'app/templates/helpers'),
         partialDirs: path.resolve(__dirname, 'app/templates')
       }
+    }, {
+      test: /\.json$/,
+      loader: 'json-loader'
     }, {
       test: /\.(jpg|png|svg|eot|ttf|woff)$/,
       loader: 'file-loader'

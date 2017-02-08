@@ -75,8 +75,12 @@ module.exports = yeoman.Base.extend({
         {opt: this.props}
       );
       this.fs.copy(
-        this.templatePath('app/templates/helpers/_gitkeep'),
-        this.destinationPath('app/templates/helpers/.gitkeep')
+        this.templatePath('app/templates/layouts/index.hbs'),
+        this.destinationPath('app/templates/layouts/index.hbs')
+      );
+      this.fs.copy(
+        this.templatePath('app/templates/helpers/linkTo.js'),
+        this.destinationPath('app/templates/helpers/linkTo.js')
       );
       this.fs.copy(
         this.templatePath('app/scripts/index.js'),
