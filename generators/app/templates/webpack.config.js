@@ -21,7 +21,8 @@ const config = {
 
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: DEV ? '[name].js' : '[name]-[hash].min.js'
+    filename: DEV ? '[name].js' : '[name]-[hash].min.js',
+    publicPath: '/'
   },
 
   resolve: {

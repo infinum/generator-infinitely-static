@@ -24,6 +24,7 @@ Running this is really simple. You'll need this generator and `yo` installed.
 npm install -g yo generator-infinitely-static
 mkdir my-project
 cd my-project
+git init
 yo infinitely-static
 ```
 
