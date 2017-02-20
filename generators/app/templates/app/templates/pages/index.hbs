@@ -2,7 +2,7 @@
   name="my-page"
   bodyClass="home"}}
 
-  <h1>Hello world!</h1>
+  <h1>Hello world {{getDataAsString 'user.name'}}!</h1>
 
   <a href="{{linkTo 'index'}}">Home</a>
 

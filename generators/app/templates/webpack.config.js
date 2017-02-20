@@ -78,14 +78,14 @@ if (!DEV) {
 if (routes) {
   Object.keys(routes)
     .filter((route) => route !== 'default')
-    .map((routeName) => {
-      return routes.hasOwnProperty(routeName)
-        ? {
-          template: resolveTemplate(routeName),
-          filename: resolveFileName(routes[routeName])
-        }
-        : null;
-    })
+    .map((routeName) => routes.hasOwnProperty(routeName)
+      ? {
+        template: resolveTemplate(routeName),
+        filename: resolveFileName(routes[routeName].route),
+        context: routes[routeName].context || {}
+      }
+      : null
+    )
     .filter((file) => file)
     .forEach((page) => {
       config.plugins.push(

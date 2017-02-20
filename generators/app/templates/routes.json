@@ -1,3 +1,10 @@
 {
-  "index": "/"
+  "index": {
+    "route": "/",
+    "context": {
+      "user": {
+        "name": "Super user"
+      }
+    }
+  }
 }

@@ -83,6 +83,10 @@ module.exports = yeoman.Base.extend({
         this.destinationPath('app/templates/helpers/linkTo.js')
       );
       this.fs.copy(
+        this.templatePath('app/templates/helpers/getDataAsString.js'),
+        this.destinationPath('app/templates/helpers/getDataAsString.js')
+      );
+      this.fs.copy(
         this.templatePath('app/scripts/index.js'),
         this.destinationPath('app/scripts/index.js')
       );

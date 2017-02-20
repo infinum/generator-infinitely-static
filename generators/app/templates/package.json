@@ -28,6 +28,8 @@
     "handlebars-loader": "^1.4.0",
     "husky": "^0.13.1",
     "json-loader": "^0.5.4",
+    "lodash.get": "^4.4.2",
+    "lodash.isplainobject": "^4.0.6",
     "node-sass": "^4.5.0",
     "postcss-loader": "^1.2.2",
     "sass-loader": "^4.1.1",
