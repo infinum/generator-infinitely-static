@@ -96,7 +96,7 @@ module.exports = yeoman.Base.extend({
       );
       this.fs.copy(
         this.templatePath('app/assets/_gitkeep'),
-        this.destinationPath('app/styles/.gitkeep')
+        this.destinationPath('app/assets/.gitkeep')
       );
     }
   },
