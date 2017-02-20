@@ -13,7 +13,7 @@ the best of Webpack and related tools.
 * JavaScript minification and dead code removal
 * SASS compilation, prefixing, and minification
 * A library for managing media breakpoints ([media-blender](https://github.com/infinum/media-blender))
-* Handlebars as a templating language (with helpers, layouts, and partials)
+* [Handlebars](http://handlebarsjs.com/) as a templating language (with helpers, layouts, and partials)
 * Support for routes (flat and nested build structure)
 
 ## Getting started
@@ -48,12 +48,22 @@ npm run build
 
 ### Routes
 
-Adding routes is also simple. In the root of the project you will find `routes.json`, containing the initial `index` route. The route configuration also supports nesting.
+Adding routes is also simple. In the root of the project you will find `routes.json`, containing the initial `index` route. The route configuration also supports nesting and template data.
 
 ```javascript
 {
-  "index": "/", // points to the template file in app/templates/pages/index.hbs
-  "contact": "contact/us/" // will take file app/templates/pages/contact.hbs
+  "index": { // points to the template file in app/templates/pages/index.hbs
+    "route": "/", // don't forget the trailing slash
+    "context": { // data that you can use in the page
+      "user": {
+        "name": "Super user"
+      }
+    }
+  },
+  "contact": {
+    "route": "contact/me/" // will generate nested routes
+    }
+  }
 }
 ```
 
@@ -62,6 +72,23 @@ Afterwards, in your templates you can use the included `{{linkTo}}` helper like 
 ```html
 <a href="{{linkTo 'index'}}">Home</a>
 ```
+
+And for the user data you can use the `getDataAsString` helper:
+
+```html
+<h1>{{getDataAsString 'user.name'}}</h1>
+```
+
+If the data is simple (array, string, Number, etc.) it will be shown as usual, but
+if you reference an object you'll get a stringified JSON. But, remember, the data can
+be accessed directly by using the `htmlWebpackPlugin.options` object in the template:
+
+```html
+<h1>{{htmlWebpackPlugin.options.context.user.name}}</h1>
+```
+
+That way you can iterate thru an array specified in the context using the build-in
+helpers.
 
 ## License
 
