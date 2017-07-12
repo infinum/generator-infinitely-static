@@ -1,5 +1,9 @@
 {
   "ignoreFiles": "app/styles/vendor/**/*.scss",
+  "plugins": [
+    "stylelint-suitcss",
+    "stylelint-no-unsupported-browser-features"
+  ],
   "rules": {
     "color-hex-case": "upper",
     "color-hex-length": "long",
@@ -32,8 +36,6 @@
     "value-list-comma-space-after": "always-single-line",
     "value-list-comma-space-before": "never",
 
-    "custom-property-no-outside-root": true,
-
     "property-no-vendor-prefix": true,
 
     "declaration-bang-space-after": "never",
@@ -54,26 +56,23 @@
     "block-closing-brace-newline-after": "always",
     "block-closing-brace-newline-before": "always",
     "block-no-empty": true,
-    "block-no-single-line": true,
     "block-opening-brace-newline-after": "always",
     "block-opening-brace-newline-before": "always-single-line",
 
     "selector-combinator-space-after": "always",
     "selector-combinator-space-before": "always",
     "selector-max-specificity": "0,4,0",
-    "selector-no-id": true,
-    "selector-no-type": true,
-    "selector-no-universal": true,
+    "selector-max-id": 0,
+    "selector-max-type": 0,
+    "selector-max-universal": 0,
     "selector-no-vendor-prefix": true,
     "selector-pseudo-element-colon-notation": "double",
-    "selector-root-no-composition": true,
 
     "selector-list-comma-newline-after": "always",
     "selector-list-comma-newline-before": "never-multi-line",
 
-    "root-no-standard-properties": true,
 
-    "rule-nested-empty-line-before": [
+    "rule-empty-line-before": [
       "always", {
         "except": [
           "first-nested"
@@ -83,18 +82,10 @@
         ]
       }
     ],
-    "rule-non-nested-empty-line-before": [
-      "always", {
-        "ignore": [
-          "after-comment"
-        ]
-      }
-    ],
 
     "media-feature-colon-space-after": "always",
     "media-feature-colon-space-before": "never",
     "media-feature-name-no-vendor-prefix": true,
-    "media-feature-no-missing-punctuation": true,
     "media-feature-range-operator-space-after": "always",
     "media-feature-range-operator-space-before": "always",
 
@@ -102,7 +93,7 @@
       "always", {
         "except": [
           "first-nested",
-          "blockless-group"
+          "blockless-after-blockless"
         ],
         "ignore": [
           "after-comment"
@@ -114,7 +105,7 @@
     "comment-empty-line-before": [
       "always", {
         "ignore": [
-          "between-comments"
+          "after-comment"
         ]
       }
     ],
@@ -126,7 +117,12 @@
     "no-duplicate-selectors": true,
     "no-eol-whitespace": true,
     "no-unknown-animations": true,
-    "no-unsupported-browser-features": [
+
+    "suitcss/custom-property-no-outside-root": true,
+    "suitcss/selector-root-no-composition": true,
+    "suitcss/root-no-standard-properties": true,
+
+    "plugin/no-unsupported-browser-features": [
       true, {
         "browsers": "last 4 versions, Android >= 4.4, not ie < 11, not safari < 9, not iOS < 9",
         "ignore": [
