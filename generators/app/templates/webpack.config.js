@@ -63,7 +63,12 @@ const config = {
     new webpack.DefinePlugin({
       _DEV_: DEV
     })
-  ]
+  ],
+
+  devServer: {
+    disableHostCheck: true,
+    host: '0.0.0.0'
+  }
 };
 
 if (!DEV) {

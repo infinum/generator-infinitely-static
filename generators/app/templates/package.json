@@ -7,7 +7,7 @@
     "__eslint": "eslint app/",
     "__stylelint": "stylelint \"app/**/*.scss\" --syntax scss",
     "precommit": "npm run __eslint && npm run __stylelint",
-    "start": "webpack-dev-server --progress",
+    "start": "NODE_ENV=development webpack-dev-server --progress",
     "build": "NODE_ENV=production webpack --progress"
   },
   "devDependencies": {
