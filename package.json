@@ -1,6 +1,6 @@
 {
   "name": "generator-infinitely-static",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Static page generator with routes support thats infinitely awesome",
   "files": [
     "generators"
