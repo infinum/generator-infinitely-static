@@ -1,5 +1,5 @@
 # Project related
-build/
+dist/
 
 # Logs
 logs
