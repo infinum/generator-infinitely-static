@@ -62,8 +62,7 @@ Adding routes is also simple. In the root of the project you will find `routes.j
   },
   "contact": {
     "route": "contact/me/" // will generate nested routes
-    }
-  }
+    }  
 }
 ```
 
